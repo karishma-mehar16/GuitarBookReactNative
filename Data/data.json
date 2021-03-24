@@ -1,0 +1,110 @@
+[
+    {
+        "id": 1,
+        "name": "O Mere Dil k Chain",
+        "desc": "Sanam Puri",
+        "ImgUri": "https://picsum.photos/200/301"
+    },
+    {
+        "id": 2,
+        "name": "Jann Nisar",
+        "desc": "Old Songs",
+        "ImgUri": "https://picsum.photos/200/302"
+    },
+    {
+        "id": 3,
+        "name": "Kaisa sama hai",
+        "desc": "Abhishek Singh",
+        "ImgUri": "https://picsum.photos/200/303"
+    },
+    {
+        "id": 4,
+        "name": "Tu Mera Nahi",
+        "desc": "| Amaal Mallik | ",
+        "ImgUri": "https://picsum.photos/200/301"
+    },
+    {
+        "id": 5,
+        "name": "Sunn Zara",
+        "desc": "| JalRaj |",
+        "ImgUri": "https://picsum.photos/200/302"
+    },
+    {
+        "id": 6,
+        "name": "Hasina Pagal Deewani",
+        "desc": "| Kiara Advani |",
+        "ImgUri": "https://picsum.photos/200/303"
+    },
+    {
+        "id": 7,
+        "name": "O Mere Dil k Chain",
+        "desc": "Sanam Puri",
+        "ImgUri": "https://picsum.photos/200/301"
+    },
+    {
+        "id": 8,
+        "name": "Jann Nisar",
+        "desc": "Old Songs",
+        "ImgUri": "https://picsum.photos/200/302"
+    },
+    {
+        "id": 9,
+        "name": "Kaisa sama hai",
+        "desc": "Abhishek Singh",
+        "ImgUri": "https://picsum.photos/200/303"
+    },
+    {
+        "id": 10,
+        "name": "Tu Mera Nahi",
+        "desc": "| Amaal Mallik |",
+        "ImgUri": "https://picsum.photos/200/301"
+    },
+    {
+        "id": 11,
+        "name": "Sunn Zara",
+        "desc": "| JalRaj |  ",
+        "ImgUri": "https://picsum.photos/200/302"
+    },
+    {
+        "id": 12,
+        "name": "Hasina Pagal Deewani",
+        "desc": "| Kiara Advani|",
+        "ImgUri": "https://picsum.photos/200/303"
+    },
+    {
+        "id": 13,
+        "name": "O Mere Dil k Chain",
+        "desc": "Sanam Puri",
+        "ImgUri": "https://picsum.photos/200/301"
+    },
+    {
+        "id": 14,
+        "name": "Jann Nisar",
+        "desc": "Old Songs",
+        "ImgUri": "https://picsum.photos/200/302"
+    },
+    {
+        "id": 15,
+        "name": "Kaisa sama hai",
+        "desc": "Abhishek Singh",
+        "ImgUri": "https://picsum.photos/200/303"
+    },
+    {
+        "id": 16,
+        "name": "Tu Mera Nahi",
+        "desc": " Amaal Mallik | ",
+        "ImgUri": "https://picsum.photos/200/301"
+    },
+    {
+        "id": 17,
+        "name": "Sunn Zara",
+        "desc": "| JalRaj |",
+        "ImgUri": "https://picsum.photos/200/302"
+    },
+    {
+        "id": 18,
+        "name": "Hasina Pagal Deewani",
+        "desc": "| Kiara Advani |",
+        "ImgUri": "https://picsum.photos/200/303"
+    }
+]
