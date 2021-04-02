@@ -71,7 +71,7 @@ const Stack = createStackNavigator()
 const TunerApp = () => {
     return (
         <Stack.Navigator>
-            <Stack.Screen name='HomeTuner' component={HomeTunerScreen} options={{ headerShown: false }} ></Stack.Screen>
+            <Stack.Screen name='Tool' component={HomeTunerScreen} options={{ headerShown: false }} ></Stack.Screen>
             <Stack.Screen name='Tuner' component={TunerNav} ></Stack.Screen>
             <Stack.Screen name='Metromono' component={MetromonoNav} ></Stack.Screen>
             <Stack.Screen name='Sound Recorder' component={SoundRecorder} ></Stack.Screen>

@@ -12,6 +12,8 @@ import ContactUsScreen from '../SettingScreens/ContactUsScreen';
 import InviteScreen from '../SettingScreens/InviteScreen';
 import MyPromotionScreen from '../SettingScreens/MyPromotionScreen';
 import ComplaintsSuggestion from '../SettingScreens/CompAndSugges/ComplaintsSuggestion';
+import SocialMediaScreen from '../SettingScreens/SocialMediaScreen';
+import { Share } from 'react-native';
 //import ComplaintsSuggestion from '../SettingScreens/ComplaintsSuggestion';
 
 const HomeCompSetting = ({ navigation }) => {
@@ -74,7 +76,7 @@ const HomeCompSetting = ({ navigation }) => {
                             <MaterialIcons name="arrow-forward" size={24} color="black" />
                         </Right>
                     </ListItem>
-                    <ListItem thumbnail onPress={() => navigation.navigate('Contact Us')}>
+                    <ListItem thumbnail onPress={onShare} >
                         <Left>
                             <MaterialIcons name="share" size={24} color="black" style={{ paddingHorizontal: 15 }} />
                         </Left>
@@ -85,7 +87,7 @@ const HomeCompSetting = ({ navigation }) => {
                             <MaterialIcons name="arrow-forward" size={24} color="black" />
                         </Right>
                     </ListItem>
-                    <ListItem thumbnail onPress={() => navigation.navigate('Contact Us')}>
+                    <ListItem thumbnail onPress={() => navigation.navigate('Social Media')}>
                         <Left>
                             <Foundation name="social-skillshare" size={24} color="black" style={{ paddingHorizontal: 15 }} />
                         </Left>
@@ -162,7 +164,30 @@ const CompSugges = ({ navigation }) => {
         <ComplaintsSuggestion />
     );
 }
-
+const onShare = async () => {
+    try {
+        const result = await Share.share({
+            message:
+                'Share Now',
+        });
+        if (result.action === Share.sharedAction) {
+            if (result.activityType) {
+                // shared with activity type of result.activityType
+            } else {
+                // shared
+            }
+        } else if (result.action === Share.dismissedAction) {
+            // dismissed
+        }
+    } catch (error) {
+        alert(error.message);
+    }
+};
+const SocialMedia = ({ navigation }) => {
+    return (
+        <SocialMediaScreen />
+    );
+}
 const Promotion = ({ navigation }) => {
     return (
         <MyPromotionScreen />
@@ -184,7 +209,7 @@ const AppSettingScreen = () => {
             <Stack.Screen name="About Us" component={AboutUs} />
             <Stack.Screen name="Contact Us" component={ContactUs} />
             <Stack.Screen name="Complaints And Suggestions" component={CompSugges} />
-
+            <Stack.Screen name="Social Media" component={SocialMedia} />
             <Stack.Screen name="My Promotion" component={Promotion} />
             <Stack.Screen name="Invite" component={Invite} />
         </Stack.Navigator>

@@ -6,7 +6,7 @@ import { Tab, Tabs, ScrollableTab } from 'native-base';
 //import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import Mashupsongs from './Mashupsongs';
 import Allsongs from './Allsongs';
-import Chords from './Chords';
+import Chords from '../TopNavigation/Chords';
 import Pattern from './Pattern';
 import Bottomfab from '../Fab/Bottomfab';
 //import Bottomfab from '../Fab/bottomfab';

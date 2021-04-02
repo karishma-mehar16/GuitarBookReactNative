@@ -1,69 +1,48 @@
 import React from 'react'
-import { View, Text, Image } from 'react-native'
-import { Container, Header, Content, Card, Item, CardItem, Left, Body, Right, Button, Input, Icon } from 'native-base';
+import { View, Text, Image, SafeAreaView, StyleSheet, TextInput } from 'react-native'
+import { Container, Header, Content, Card, Item, CardItem, Left, Body, Right, Button, Input, Icon, Fab } from 'native-base';
 import RecommendedSongs from './Recommended';
-import Bottomfab from '../Fab/Bottomfab';
-
-const Allsongs = () => {
+import { FloatingAction } from 'react-native-floating-action';
+import { createStackNavigator } from '@react-navigation/stack';
+import { NavigationContainer } from '@react-navigation/native';
+import AddSongScreen from './AddSongScreen';
+function AddSong() {
     return (
-        <Container>
-            <Content>
-                <Item style={{
-                    justifyContent: 'center', alignItems: 'center', marginLeft: 20, marginRight: 20, borderRadius: 5, borderColor: 'gray', borderTopColor: 'gray', borderLeftColor: 'gray', borderRightColor: 'gray', borderRightWidth: 1, borderLeftWidth: 1, borderRightWidth: 1, borderTopWidth: 1, marginTop: 10,
-                    paddingHorizontal: 10
-                }}>
-                    <Icon name="search" />
-                    <Input placeholder="Search" />
-                </Item>
-                <Card>
-                    <CardItem Header>
-                        <Text style={{ fontSize: 20 }}>This data is from fetch api</Text>
+        <AddSongScreen />
+    );
+}
+const HomeScreen = (props) => {
 
-                    </CardItem>
-                    <RecommendedSongs
-                        ImgUri={('https://picsum.photos/200/301')}
-                    />
+    const gotoAddSongStackScreen = () => {
+        props.navigation.navigate('Add Songs');
+    };
+    return (
+        <View style={{ flex: 1 }}>
 
-                    {/* <RecommendedSongs
-                        ImgUri={('https://picsum.photos/200/301')}
-                        SongName='O Mere dil K Chain'
-                        SingerName='Sanam Puri'
-                    />
-                    <RecommendedSongs
-                        ImgUri={('https://picsum.photos/200/302')}
-                        SongName='Jann Nisar'
-                        SingerName='Old Hindi Songs'
-                    />
-                    <RecommendedSongs
-                        ImgUri={('https://picsum.photos/200/303')}
-                        SongName='Gulabi Ankhe'
-                        SingerName='Old Hindi Songs'
-                    />
-                    <RecommendedSongs
-                        ImgUri={('https://picsum.photos/200/304')}
-                        SongName='Gulabi Ankhe'
-                        SingerName='Old Hindi Songs'
-                    />
-                    <RecommendedSongs
-                        ImgUri={('https://picsum.photos/200/305')}
-                        SongName='Gulabi Ankhe'
-                        SingerName='Old Hindi Songs'
-                    />
-                    <RecommendedSongs
-                        ImgUri={('https://picsum.photos/200/306')}
-                        SongName='Gulabi Ankhe'
-                        SingerName='Old Hindi Songs'
-                    />
-                    <RecommendedSongs
-                        ImgUri={('https://picsum.photos/200/307')}
-                        SongName='Gulabi Ankhe'
-                        SingerName='Old Hindi Songs'
-                    /> */}
-                </Card>
-            </Content>
-            <Bottomfab />
-        </Container>
+            <RecommendedSongs ImgUri={('https://picsum.photos/200/301')} />
+            <FloatingAction onPressMain={gotoAddSongStackScreen}>
+            </FloatingAction>
+        </View>
     )
 }
+function AddSontStack() {
+    return (
+        <Stack.Navigator >
+            <Stack.Screen name="Home" component={HomeScreen} options={{ headerShown: false }} />
+        </Stack.Navigator>
+    );
+}
 
-export default Allsongs
+const Stack = createStackNavigator();
+
+export default function Allsongs() {
+    return (
+        <NavigationContainer independent={true}>
+            <Stack.Navigator initialRouteName="Tabs">
+                <Stack.Screen name="Add Songs" component={AddSong} />
+                <Stack.Screen name="Tabs" component={AddSontStack} options={{ headerShown: false }} />
+            </Stack.Navigator>
+        </NavigationContainer>
+    );
+}
+
