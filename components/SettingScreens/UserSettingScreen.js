@@ -80,8 +80,11 @@ const UserSettingScreen = () => {
                         <Picker
                             selectedValue={selectedValue}
                             style={{
-                                height: 45, marginLeft: 20,
-                                borderWidth: 1, width: '75%',
+                                marginLeft: 20,
+                                height: 20,
+                                top: -50,
+                                width: '75%',
+
                             }}
                             onValueChange={(itemValue, itemIndex) => setSelectedValue(itemValue)}
                         >

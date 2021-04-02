@@ -1,11 +1,24 @@
 import React from 'react'
 import { View, Text, Image } from 'react-native'
 import { Container, Header, Content, Card, Item, CardItem, Left, Body, Right, Button, Input, Icon } from 'native-base';
-import RecommendedSongs from './Recommended';
+import { FloatingAction } from 'react-native-floating-action';
+import { createStackNavigator } from '@react-navigation/stack';
+import { NavigationContainer } from '@react-navigation/native';
+import CreateMashupScreen from './CreateMashup/CreateMashupScreen';
 import MashupRecommended from './MashupRecommended';
-import Bottomfab from '../Fab/Bottomfab';
 
-const Mashupsongs = () => {
+
+
+
+function AddSong() {
+    return (
+        <CreateMashupScreen />
+    );
+}
+const HomeScreenMashupsongs = (props) => {
+    const gotoAddSongStackScreen = () => {
+        props.navigation.navigate('Create Mashup');
+    };
     return (
         <Container>
             <Content>
@@ -21,11 +34,32 @@ const Mashupsongs = () => {
                         <Text style={{ fontSize: 20 }}>This data is from local json file</Text>
                     </CardItem>
                     <MashupRecommended />
+
                 </Card>
             </Content>
-            <Bottomfab />
+            <FloatingAction onPressMain={gotoAddSongStackScreen}>
+            </FloatingAction>
         </Container>
     );
 }
+function AddSontStack() {
+    return (
+        <Stack.Navigator >
+            <Stack.Screen name="Home" component={HomeScreenMashupsongs} options={{ headerShown: false }} />
+        </Stack.Navigator>
+    );
+}
 
-export default Mashupsongs
+const Stack = createStackNavigator();
+
+export default function Mashupsongs() {
+    return (
+        <NavigationContainer independent={true}>
+            <Stack.Navigator initialRouteName="Tabs">
+                <Stack.Screen name="Create Mashup" component={AddSong} />
+                <Stack.Screen name="Tabs" component={AddSontStack} options={{ headerShown: false }} />
+            </Stack.Navigator>
+        </NavigationContainer>
+    );
+}
+
