@@ -73,7 +73,7 @@ const DrawerOptions = () => {
 }
 export default function App() {
   return (
-    <NavigationContainer>
+    <NavigationContainer independent={true}>
       <DrawerOptions />
     </NavigationContainer>
   );
