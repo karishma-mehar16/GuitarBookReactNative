@@ -1,0 +1,56 @@
+import { Container, Content, } from 'native-base'
+import React from 'react'
+import { StyleSheet, Text, View, Image, Button } from 'react-native'
+import Buttons from './Buttons';
+
+const PatternScreenTwo = () => {
+    return (
+        <Container>
+            <Content>
+                <View style={styles.container}>
+                    <View style={{ flex: 1, paddingVertical: 20, paddingHorizontal: 5, borderWidth: 1, borderColor: 'gray', shadowColor: 'lightgray', }}>
+                        <Image style={{ width: '100%', height: 200, resizeMode: 'stretch' }} source={{ uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtrmF3IVF38GX4_0pofhdXkUCRd1aUkhGPew&usqp=CAU' }} />
+                    </View>
+                    <View style={styles.buttonGroup}>
+                        <Buttons />
+                    </View>
+                </View>
+            </Content>
+        </Container>
+
+    )
+}
+
+export default PatternScreenTwo
+
+
+const styles = StyleSheet.create({
+    container: { flex: 1, paddingHorizontal: 5, paddingVertical: 20 },
+    buttonGroup: { flex: 1, flexDirection: 'row', marginVertical: 10 },
+    button: {
+        marginTop: 0,
+        borderRadius: 5,
+        padding: 5,
+        width: 120,
+
+    },
+    background: {
+
+        height: 50,
+        justifyContent: 'center',
+        alignItems: 'center',
+        flex: 1,
+        borderRadius: 5,
+        borderWidth: 1,
+        borderColor: '#192f6a',
+    },
+    text: {
+        backgroundColor: 'transparent',
+        fontSize: 15,
+        color: '#fff',
+        textAlign: 'center',
+        marginTop: 0
+    },
+});
+
+
